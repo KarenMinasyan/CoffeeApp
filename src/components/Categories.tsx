@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { categories, COLORS, SPACING } from 'src/helpers/constants';
+import { useAppDispatch, useAppSelector } from 'src/hook';
+import { chooseCategory } from 'src/store/category/categorySlice';
+import { categorySelector } from 'src/helpers/reduxSelectors';
 
-const Categories = ({ onChange }: any) => {
-	const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);
+const Categories = () => {
+	const { categoryId } = useAppSelector(categorySelector);
+	const dispatch = useAppDispatch();
+
 	const handlePress = (id: number) => {
-		setActiveCategoryId(id);
-		onChange(id);
+		dispatch(chooseCategory(id));
 	};
 	return (
 		<FlatList
@@ -16,12 +20,10 @@ const Categories = ({ onChange }: any) => {
 			contentContainerStyle={styles.container}
 			renderItem={({ item }) => (
 				<TouchableOpacity style={styles.category} onPress={() => handlePress(item.id)}>
-					<Text
-						style={[styles.categoryItem, activeCategoryId === item.id && { color: COLORS.primary }]}
-					>
+					<Text style={[styles.categoryItem, categoryId === item.id && { color: COLORS.primary }]}>
 						{item.name}
 					</Text>
-					{activeCategoryId === item.id && <View style={styles.activeItem} />}
+					{categoryId === item.id && <View style={styles.activeItem} />}
 				</TouchableOpacity>
 			)}
 		/>
