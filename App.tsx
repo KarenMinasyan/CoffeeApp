@@ -6,8 +6,8 @@ import CoffeeDetailScreen from "./src/screens/CoffeeDetailScreen";
 
 const App = () => (
   <View style={styles.container}>
-    <HomeScreen />
-    {/*<CoffeeDetailScreen coffee={COFFEES[4]} />*/}
+    {/*<HomeScreen />*/}
+    <CoffeeDetailScreen coffee={COFFEES[4]} />
   </View>
 );
 
