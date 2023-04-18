@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, TouchableOpacity, View, StyleSheet } from 'react-native';
-import { COLORS, SPACING } from '../helpers/constants';
-import { BlurView } from '@react-native-community/blur';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { BlurView } from '@react-native-community/blur';
+
+import { COLORS, SPACING } from '../helpers/constants';
 
 const Header = () => (
 	<View style={styles.header}>

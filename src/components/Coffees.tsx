@@ -1,10 +1,10 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { COFFEES, COLORS, SPACING } from 'src/helpers/constants';
-import { BlurView } from '@react-native-community/blur';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useAppSelector } from 'src/hook';
+import { BlurView } from '@react-native-community/blur';
+import { COFFEES, COLORS, SPACING } from 'src/helpers/constants';
 import { categorySelector } from 'src/helpers/reduxSelectors';
+import { useAppSelector } from 'src/hook';
 
 const { width } = Dimensions.get('window');
 

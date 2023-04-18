@@ -7,9 +7,9 @@ import {
 	TouchableOpacity,
 	View,
 } from 'react-native';
-import { COLORS, SPACING } from 'src/helpers/constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { BlurView } from '@react-native-community/blur';
+import { COLORS, SPACING } from 'src/helpers/constants';
 
 const { height } = Dimensions.get('window');
 

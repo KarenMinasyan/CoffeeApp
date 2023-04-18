@@ -1,9 +1,9 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { categories, COLORS, SPACING } from 'src/helpers/constants';
+import { categorySelector } from 'src/helpers/reduxSelectors';
 import { useAppDispatch, useAppSelector } from 'src/hook';
 import { chooseCategory } from 'src/store/category/categorySlice';
-import { categorySelector } from 'src/helpers/reduxSelectors';
 
 const Categories = () => {
 	const { categoryId } = useAppSelector(categorySelector);

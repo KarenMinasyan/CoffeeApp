@@ -1,10 +1,10 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { COLORS, SPACING } from 'src/helpers/constants';
-import SearchField from 'src/components/SearchField';
 import Categories from 'src/components/Categories';
-import Header from 'src/components/Header';
 import Coffees from 'src/components/Coffees';
+import Header from 'src/components/Header';
+import SearchField from 'src/components/SearchField';
+import { COLORS, SPACING } from 'src/helpers/constants';
 
 const HomeScreen = () => {
 	return (

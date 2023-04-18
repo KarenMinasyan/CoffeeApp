@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import Detail from 'src/components/Detail';
-import Info from 'src/components/Info';
 import Footer from 'src/components/Footer';
+import Info from 'src/components/Info';
 
 const CoffeeDetailScreen = ({ coffee }: any) => {
 	return (

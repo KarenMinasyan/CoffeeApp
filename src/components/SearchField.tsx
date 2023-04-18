@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
-import { COLORS, SPACING } from 'src/helpers/constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { BlurView } from '@react-native-community/blur';
+import { COLORS, SPACING } from 'src/helpers/constants';
 
 const SearchField = () => {
 	return (
