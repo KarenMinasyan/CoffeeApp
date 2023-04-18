@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { categories, COLORS, SPACING } from "../helpers/constants";
 
 const Categories = ({ onChange }: any) => {
@@ -13,28 +13,20 @@ const Categories = ({ onChange }: any) => {
       horizontal={true}
       data={categories}
       keyExtractor={(item: any) => item.id}
-      contentContainerStyle={{ marginVertical: SPACING }}
+      contentContainerStyle={styles.container}
       renderItem={({ item }) => (
         <TouchableOpacity
-          style={{ marginRight: SPACING * 2, alignItems: "center" }}
+          style={styles.category}
           onPress={() => handlePress(item.id)}
         >
           <Text
             style={[
-              { color: COLORS.secondary, fontSize: SPACING * 2 },
+              styles.categoryItem,
               activeCategoryId === item.id && { color: COLORS.primary }
             ]}>
             {item.name}
           </Text>
-          {activeCategoryId === item.id && (
-            <View style={{
-              height: SPACING,
-              width: SPACING,
-              backgroundColor: COLORS.primary,
-              borderRadius: SPACING / 2,
-              marginTop: SPACING / 2
-            }} />
-          )}
+          {activeCategoryId === item.id && <View style={styles.activeItem} />}
         </TouchableOpacity>
       )}
     />
@@ -42,3 +34,24 @@ const Categories = ({ onChange }: any) => {
 };
 
 export default Categories;
+
+const styles = StyleSheet.create({
+  container: {
+    marginVertical: SPACING
+  },
+  category: {
+    marginRight: SPACING * 2,
+    alignItems: "center"
+  },
+  categoryItem: {
+    color: COLORS.secondary,
+    fontSize: SPACING * 2
+  },
+  activeItem: {
+    height: SPACING,
+    width: SPACING,
+    backgroundColor: COLORS.primary,
+    borderRadius: SPACING / 2,
+    marginTop: SPACING / 2
+  }
+});

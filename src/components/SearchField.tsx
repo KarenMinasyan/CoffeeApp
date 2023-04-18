@@ -1,20 +1,20 @@
-import React from 'react';
-import { TextInput, View } from "react-native";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
 import { COLORS, SPACING } from "../helpers/constants";
 import Icon from "react-native-vector-icons/Ionicons";
-import { BlurView } from '@react-native-community/blur';
+import { BlurView } from "@react-native-community/blur";
 
 const SearchField = () => {
   return (
-    <View style={{ borderRadius: SPACING, overflow: 'hidden' }}>
-      <BlurView overlayColor={'#1f2126'}>
-        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.search}>
+      <BlurView overlayColor={"#1f2126"}>
+        <View style={styles.inner}>
           <TextInput
-            style={{ width: '100%', color: COLORS.white, fontSize: SPACING * 1.7, padding: SPACING, paddingLeft: SPACING * 3.5 }}
-            placeholder='Find Your Coffee...'
+            style={styles.field}
+            placeholder="Find Your Coffee..."
             placeholderTextColor={COLORS.light}
           />
-          <Icon style={{ position: "absolute", left: SPACING }}  name='search' size={SPACING * 2} color={COLORS.light} />
+          <Icon style={styles.searchIcon} name="search" size={SPACING * 2} color={COLORS.light} />
         </View>
       </BlurView>
     </View>
@@ -22,3 +22,25 @@ const SearchField = () => {
 };
 
 export default SearchField;
+
+const styles = StyleSheet.create({
+  search: {
+    borderRadius: SPACING,
+    overflow: "hidden"
+  },
+  inner: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  field: {
+    width: "100%",
+    color: COLORS.white,
+    fontSize: SPACING * 1.7,
+    padding: SPACING,
+    paddingLeft: SPACING * 3.5
+  },
+  searchIcon: {
+    position: "absolute",
+    left: SPACING
+  }
+});
