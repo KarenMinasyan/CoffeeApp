@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dimensions, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { COLORS, SPACING } from "../helpers/constants";
 import SearchField from "../components/SearchField";
 import Categories from "../components/Categories";

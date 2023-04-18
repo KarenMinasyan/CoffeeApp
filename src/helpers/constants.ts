@@ -116,3 +116,8 @@ export const COFFEES =  [
     included: "With Oat milk",
   },
 ];
+
+export const SCREENS = {
+  HOME: 'Home',
+  DETAIL: 'Detail'
+} as const;
