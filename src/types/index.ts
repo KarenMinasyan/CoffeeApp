@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { SCREENS } from "../helpers/constants";
+import { SCREENS } from "src/helpers/constants";
 
 const { HOME, DETAIL } = SCREENS;
 

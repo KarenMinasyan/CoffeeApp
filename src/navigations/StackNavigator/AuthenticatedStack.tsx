@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../types";
-import HomeScreen from "../../screens/HomeScreen";
-import CoffeeDetailScreen from "../../screens/CoffeeDetailScreen";
-import { COLORS, SCREENS } from "../../helpers/constants";
+import { RootStackParamList } from "src/types";
+import HomeScreen from "src/screens/HomeScreen";
+import CoffeeDetailScreen from "src/screens/CoffeeDetailScreen";
+import { COLORS, SCREENS } from "src/helpers/constants";
 
 const { HOME, DETAIL } = SCREENS;
 const Stack = createNativeStackNavigator<RootStackParamList>();

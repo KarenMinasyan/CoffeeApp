@@ -1,6 +1,6 @@
 import React from "react";
 import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { COLORS, SPACING } from "../helpers/constants";
+import { COLORS, SPACING } from "src/helpers/constants";
 
 const { width } = Dimensions.get("window");
 

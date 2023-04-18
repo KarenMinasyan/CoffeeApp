@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
-import { COLORS, SPACING } from "../helpers/constants";
-import SearchField from "../components/SearchField";
-import Categories from "../components/Categories";
-import Header from "../components/Header";
-import Coffees from "../components/Coffees";
+import { COLORS, SPACING } from "src/helpers/constants";
+import SearchField from "src/components/SearchField";
+import Categories from "src/components/Categories";
+import Header from "src/components/Header";
+import Coffees from "src/components/Coffees";
 
 const HomeScreen = () => {
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);

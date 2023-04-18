@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { categories, COLORS, SPACING } from "../helpers/constants";
+import { categories, COLORS, SPACING } from "src/helpers/constants";
 
 const Categories = ({ onChange }: any) => {
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);

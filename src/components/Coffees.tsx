@@ -1,6 +1,6 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { COFFEES, COLORS, SPACING } from "../helpers/constants";
+import { COFFEES, COLORS, SPACING } from "src/helpers/constants";
 import { BlurView } from "@react-native-community/blur";
 import Icon from "react-native-vector-icons/Ionicons";
 
