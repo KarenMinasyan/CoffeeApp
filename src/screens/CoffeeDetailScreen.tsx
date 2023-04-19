@@ -3,17 +3,24 @@ import { SafeAreaView, ScrollView } from 'react-native';
 import Detail from 'src/components/Detail';
 import Footer from 'src/components/Footer';
 import Info from 'src/components/Info';
+import { findCoffeeByIdSelector } from 'src/helpers/reduxSelectors';
+import { useAppSelector } from 'src/hook';
 
-const CoffeeDetailScreen = ({ coffee }: any) => {
+const CoffeeDetailScreen = () => {
+	const coffee = useAppSelector(findCoffeeByIdSelector);
 	return (
 		<>
-			<ScrollView>
-				<SafeAreaView>
-					<Detail coffee={coffee} />
-					<Info coffee={coffee} />
-				</SafeAreaView>
-			</ScrollView>
-			<Footer coffee={coffee} />
+			{coffee?.id && (
+				<>
+					<ScrollView>
+						<SafeAreaView>
+							<Detail coffee={coffee} />
+							<Info coffee={coffee} />
+						</SafeAreaView>
+					</ScrollView>
+					<Footer coffee={coffee} />
+				</>
+			)}
 		</>
 	);
 };

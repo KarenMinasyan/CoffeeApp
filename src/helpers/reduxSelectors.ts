@@ -9,3 +9,9 @@ export const filterCoffeesByIdSelector = createSelector(
 	({ category }: RootState) => category.categoryId,
 	(items, id) => items.filter(({ categoryId }) => id === null || categoryId === id)
 );
+
+export const findCoffeeByIdSelector = createSelector(
+	({ coffees }: RootState) => coffees.products,
+	({ coffees }: RootState) => coffees.coffeeId,
+	(items, coffeeId) => items.find(({ id }) => id === coffeeId)
+);

@@ -1,6 +1,6 @@
-import { ImageSourcePropType } from "react-native";
+import { ImageSourcePropType } from 'react-native';
 
-type CoffeeProductTyp = {
+export type CoffeeProductType = {
 	id: number;
 	name: string;
 	image: ImageSourcePropType;
@@ -12,7 +12,8 @@ type CoffeeProductTyp = {
 };
 
 type CoffeesInitialType = {
-	products: CoffeeProductTyp[];
+	products: CoffeeProductType[];
+	coffeeId: number | null;
 };
 
 export const initialState: CoffeesInitialType = {
@@ -106,4 +107,5 @@ export const initialState: CoffeesInitialType = {
 			included: 'With Oat milk',
 		},
 	],
+	coffeeId: null,
 };

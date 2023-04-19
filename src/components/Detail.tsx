@@ -9,16 +9,27 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { BlurView } from '@react-native-community/blur';
-import { COLORS, SPACING } from 'src/helpers/constants';
+import { useNavigation } from '@react-navigation/native';
+import { COLORS, SCREENS, SPACING } from 'src/helpers/constants';
+import { useAppDispatch } from 'src/hook';
+import { clear } from 'src/store/coffees/coffeesSlice';
+import { CoffeeProductType } from 'src/store/coffees/initialState';
 
+const { HOME } = SCREENS;
 const { height } = Dimensions.get('window');
 
-const Detail = ({ coffee }: any) => {
+const Detail = ({ coffee }: { coffee: CoffeeProductType }) => {
+	const navigation = useNavigation();
+	const dispatch = useAppDispatch();
+	const handleBack = () => {
+		dispatch(clear());
+		navigation.navigate(HOME);
+	};
 	return (
 		<ImageBackground source={coffee.image} style={styles.container} imageStyle={styles.bg}>
 			<View style={styles.inner}>
 				<TouchableOpacity style={styles.back}>
-					<Icon name='arrow-back' size={SPACING * 2} color={COLORS.light} />
+					<Icon name='arrow-back' size={SPACING * 2} color={COLORS.light} onPress={handleBack} />
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.favorite}>
 					<Icon name='heart' size={SPACING * 2} color={COLORS.light} />

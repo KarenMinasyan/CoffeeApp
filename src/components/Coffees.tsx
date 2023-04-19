@@ -2,14 +2,25 @@ import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { BlurView } from '@react-native-community/blur';
-import { COLORS, SPACING } from 'src/helpers/constants';
+import { useNavigation } from '@react-navigation/native';
+import { COLORS, SCREENS, SPACING } from 'src/helpers/constants';
 import { filterCoffeesByIdSelector } from 'src/helpers/reduxSelectors';
-import { useAppSelector } from 'src/hook';
+import { useAppDispatch, useAppSelector } from 'src/hook';
+import { chosenCoffee } from 'src/store/coffees/coffeesSlice';
 
+const { DETAIL } = SCREENS;
 const { width } = Dimensions.get('window');
 
 const Coffees = () => {
 	const filteredCoffees = useAppSelector(filterCoffeesByIdSelector);
+	const navigation = useNavigation();
+	const dispatch = useAppDispatch();
+
+	const handleChoose = (id: number) => () => {
+		dispatch(chosenCoffee(id));
+		navigation.navigate(DETAIL);
+	};
+
 	return (
 		<View style={styles.coffees}>
 			{filteredCoffees.map((coffee) => (
@@ -17,7 +28,7 @@ const Coffees = () => {
 					<BlurView overlayColor={'#1f2126'}>
 						<View style={styles.coffeeWrapper}>
 							<View style={styles.coffeeInner}>
-								<TouchableOpacity style={styles.imgContainer}>
+								<TouchableOpacity style={styles.imgContainer} onPress={handleChoose(coffee.id)}>
 									<Image source={coffee.image} style={styles.img} />
 									<View style={styles.rating}>
 										<BlurView overlayColor={'#1f2126'}>

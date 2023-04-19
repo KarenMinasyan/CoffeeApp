@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS, SPACING } from 'src/helpers/constants';
+import { CoffeeProductType } from 'src/store/coffees/initialState';
 
 const { width } = Dimensions.get('window');
 const sizes = ['S', 'M', 'L'];
 
-const Info = ({ coffee }: any) => {
+const Info = ({ coffee }: { coffee: CoffeeProductType }) => {
 	const [activeSize, setActiveSize] = useState<string | null>(null);
 	return (
 		<View style={styles.container}>

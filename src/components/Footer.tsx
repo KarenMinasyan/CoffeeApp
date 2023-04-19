@@ -1,10 +1,11 @@
 import React from 'react';
 import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS, SPACING } from 'src/helpers/constants';
+import { CoffeeProductType } from 'src/store/coffees/initialState';
 
 const { width } = Dimensions.get('window');
 
-const Footer = ({ coffee }: any) => {
+const Footer = ({ coffee }: { coffee: CoffeeProductType }) => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.right}>
