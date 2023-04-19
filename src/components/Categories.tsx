@@ -12,6 +12,7 @@ const Categories = () => {
 	const handlePress = (id: number) => {
 		dispatch(chooseCategory(id));
 	};
+
 	return (
 		<FlatList
 			horizontal={true}

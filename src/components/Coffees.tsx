@@ -2,22 +2,17 @@ import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { BlurView } from '@react-native-community/blur';
-import { COFFEES, COLORS, SPACING } from 'src/helpers/constants';
-import { categorySelector } from 'src/helpers/reduxSelectors';
+import { COLORS, SPACING } from 'src/helpers/constants';
+import { filterCoffeesByIdSelector } from 'src/helpers/reduxSelectors';
 import { useAppSelector } from 'src/hook';
 
 const { width } = Dimensions.get('window');
 
 const Coffees = () => {
-	const { categoryId } = useAppSelector(categorySelector);
+	const filteredCoffees = useAppSelector(filterCoffeesByIdSelector);
 	return (
 		<View style={styles.coffees}>
-			{COFFEES.filter((coffee) => {
-				if (categoryId === null) {
-					return true;
-				}
-				return coffee.categoryId === categoryId;
-			}).map((coffee) => (
+			{filteredCoffees.map((coffee) => (
 				<View key={coffee.id} style={styles.coffee}>
 					<BlurView overlayColor={'#1f2126'}>
 						<View style={styles.coffeeWrapper}>
