@@ -6,21 +6,19 @@ import Header from 'src/components/Header';
 import SearchField from 'src/components/SearchField';
 import { COLORS, SPACING } from 'src/helpers/constants';
 
-const HomeScreen = () => {
-	return (
-		<SafeAreaView>
-			<ScrollView style={styles.home}>
-				<Header />
-				<View style={styles.header}>
-					<Text style={styles.title}>Find the best coffee for you</Text>
-				</View>
-				<SearchField />
-				<Categories />
-				<Coffees />
-			</ScrollView>
-		</SafeAreaView>
-	);
-};
+const HomeScreen = () => (
+	<SafeAreaView>
+		<ScrollView style={styles.home}>
+			<Header />
+			<View style={styles.header}>
+				<Text style={styles.title}>Find the best coffee for you</Text>
+			</View>
+			<SearchField />
+			<Categories />
+			<Coffees />
+		</ScrollView>
+	</SafeAreaView>
+);
 
 export default HomeScreen;
 
