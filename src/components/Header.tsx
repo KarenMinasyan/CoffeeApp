@@ -2,15 +2,16 @@ import React from 'react';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { BlurView } from '@react-native-community/blur';
+import { COLORS, SPACING } from 'src/helpers/constants';
 
-import { COLORS, SPACING } from '../helpers/constants';
+const { secondary } = COLORS;
 
 const Header = () => (
 	<View style={styles.header}>
 		<TouchableOpacity style={styles.menu}>
 			<BlurView overlayColor={'#1f2126'}>
 				<View style={styles.menuWrapper}>
-					<Icon name='menu' size={SPACING * 2.5} color={COLORS.secondary} />
+					<Icon name='menu' size={SPACING * 2.5} color={secondary} />
 				</View>
 			</BlurView>
 		</TouchableOpacity>

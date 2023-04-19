@@ -16,6 +16,7 @@ import { clear } from 'src/store/coffees/coffeesSlice';
 import { CoffeeProductType } from 'src/store/coffees/initialState';
 
 const { HOME } = SCREENS;
+const { light, primary, dark, white } = COLORS;
 const { height } = Dimensions.get('window');
 
 const Detail = ({ coffee }: { coffee: CoffeeProductType }) => {
@@ -29,10 +30,10 @@ const Detail = ({ coffee }: { coffee: CoffeeProductType }) => {
 		<ImageBackground source={coffee.image} style={styles.container} imageStyle={styles.bg}>
 			<View style={styles.inner}>
 				<TouchableOpacity style={styles.back}>
-					<Icon name='arrow-back' size={SPACING * 2} color={COLORS.light} onPress={handleBack} />
+					<Icon name='arrow-back' size={SPACING * 2} color={light} onPress={handleBack} />
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.favorite}>
-					<Icon name='heart' size={SPACING * 2} color={COLORS.light} />
+					<Icon name='heart' size={SPACING * 2} color={light} />
 				</TouchableOpacity>
 			</View>
 			<View style={styles.detail}>
@@ -43,18 +44,18 @@ const Detail = ({ coffee }: { coffee: CoffeeProductType }) => {
 								<Text style={styles.coffeeName}>{coffee.name}</Text>
 								<Text style={styles.included}>{coffee.included}</Text>
 								<View style={styles.rating}>
-									<Icon name='star' size={SPACING * 1.5} color={COLORS.primary} />
+									<Icon name='star' size={SPACING * 1.5} color={primary} />
 									<Text style={styles.rate}>{coffee.rating}</Text>
 								</View>
 							</View>
 							<View style={styles.info}>
 								<View style={styles.infoInner}>
 									<View style={styles.coffee}>
-										<Icon name='cafe' size={SPACING * 2} color={COLORS.primary} />
+										<Icon name='cafe' size={SPACING * 2} color={primary} />
 										<Text style={styles.coffeeText}>Coffee</Text>
 									</View>
 									<View style={styles.coffee}>
-										<Icon name='water' size={SPACING * 2} color={COLORS.primary} />
+										<Icon name='water' size={SPACING * 2} color={primary} />
 										<Text style={styles.coffeeText}>Milk</Text>
 									</View>
 								</View>
@@ -86,12 +87,12 @@ const styles = StyleSheet.create({
 		padding: SPACING * 2,
 	},
 	back: {
-		backgroundColor: COLORS.dark,
+		backgroundColor: dark,
 		padding: SPACING,
 		borderRadius: SPACING * 1.5,
 	},
 	favorite: {
-		backgroundColor: COLORS.dark,
+		backgroundColor: dark,
 		padding: SPACING,
 		borderRadius: SPACING * 1.5,
 	},
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
 	},
 	coffeeName: {
 		fontSize: SPACING * 2,
-		color: COLORS.white,
+		color: white,
 		fontWeight: '600',
 		marginBottom: SPACING,
 	},
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
 		marginTop: SPACING,
 	},
 	rate: {
-		color: COLORS.white,
+		color: white,
 		marginLeft: SPACING,
 	},
 	info: {
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
 		padding: SPACING / 2,
 		width: SPACING * 5,
 		height: SPACING * 5,
-		backgroundColor: COLORS.dark,
+		backgroundColor: dark,
 		borderRadius: SPACING,
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
 		fontSize: SPACING,
 	},
 	roasted: {
-		backgroundColor: COLORS.dark,
+		backgroundColor: dark,
 		padding: SPACING / 2,
 		borderRadius: SPACING / 2,
 		alignItems: 'center',

@@ -7,6 +7,8 @@ import { useAppDispatch } from 'src/hook';
 import useDebounce from 'src/hooks/useDebounce';
 import { filterValue } from 'src/store/coffees/coffeesSlice';
 
+const { light, white } = COLORS;
+
 const SearchField = () => {
 	const [filterInputValue, setFilterInputValue] = useState('');
 	const debouncedSearch = useDebounce(filterInputValue, 500);
@@ -32,11 +34,11 @@ const SearchField = () => {
 					<TextInput
 						style={styles.field}
 						placeholder='Find Your Coffee...'
-						placeholderTextColor={COLORS.light}
+						placeholderTextColor={light}
 						onChangeText={handleInputValue}
 						value={filterInputValue}
 					/>
-					<Icon style={styles.searchIcon} name='search' size={SPACING * 2} color={COLORS.light} />
+					<Icon style={styles.searchIcon} name='search' size={SPACING * 2} color={light} />
 				</View>
 			</BlurView>
 		</View>
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
 	},
 	field: {
 		width: '100%',
-		color: COLORS.white,
+		color: white,
 		fontSize: SPACING * 1.7,
 		padding: SPACING,
 		paddingLeft: SPACING * 3.5,

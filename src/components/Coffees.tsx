@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from 'src/hook';
 import { chosenCoffee } from 'src/store/coffees/coffeesSlice';
 
 const { DETAIL } = SCREENS;
+const { primary, white, secondary } = COLORS;
 const { width } = Dimensions.get('window');
 
 const Coffees = () => {
@@ -37,7 +38,7 @@ const Coffees = () => {
 													style={styles.starIcon}
 													name='star'
 													size={SPACING * 1.7}
-													color={COLORS.primary}
+													color={primary}
 												/>
 												<Text style={styles.rate}>{coffee.rating}</Text>
 											</View>
@@ -56,7 +57,7 @@ const Coffees = () => {
 										<Text style={styles.price}>{coffee.price}</Text>
 									</View>
 									<TouchableOpacity style={styles.add}>
-										<Icon name='add' size={SPACING * 2} color={COLORS.white} />
+										<Icon name='add' size={SPACING * 2} color={white} />
 									</TouchableOpacity>
 								</View>
 							</View>
@@ -112,18 +113,18 @@ const styles = StyleSheet.create({
 		marginLeft: SPACING / 2,
 	},
 	rate: {
-		color: COLORS.white,
+		color: white,
 		marginLeft: SPACING / 2,
 	},
 	title: {
-		color: COLORS.white,
+		color: white,
 		fontWeight: '600',
 		fontSize: SPACING * 1.7,
 		marginTop: SPACING,
 		marginBottom: SPACING / 2,
 	},
 	included: {
-		color: COLORS.secondary,
+		color: secondary,
 		fontSize: SPACING * 1.2,
 	},
 	footer: {
@@ -136,16 +137,16 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 	},
 	symbol: {
-		color: COLORS.primary,
+		color: primary,
 		marginRight: SPACING / 2,
 		fontSize: SPACING * 1.6,
 	},
 	price: {
-		color: COLORS.white,
+		color: white,
 		fontSize: SPACING * 1.6,
 	},
 	add: {
-		backgroundColor: COLORS.primary,
+		backgroundColor: primary,
 		padding: SPACING / 2,
 		borderRadius: SPACING,
 	},

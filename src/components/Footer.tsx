@@ -3,6 +3,7 @@ import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } fr
 import { COLORS, SPACING } from 'src/helpers/constants';
 import { CoffeeProductType } from 'src/store/coffees/initialState';
 
+const { white, primary } = COLORS;
 const { width } = Dimensions.get('window');
 
 const Footer = ({ coffee }: { coffee: CoffeeProductType }) => {
@@ -36,31 +37,31 @@ const styles = StyleSheet.create({
 		paddingLeft: SPACING * 3,
 	},
 	title: {
-		color: COLORS.white,
+		color: white,
 		fontSize: SPACING * 1.5,
 	},
 	priceWrapper: {
 		flexDirection: 'row',
 	},
 	symbol: {
-		color: COLORS.primary,
+		color: primary,
 		fontSize: SPACING * 2,
 	},
 	price: {
-		color: COLORS.white,
+		color: white,
 		fontSize: SPACING * 1.7,
 		marginLeft: SPACING / 2,
 	},
 	left: {
 		marginLeft: SPACING,
-		backgroundColor: COLORS.primary,
+		backgroundColor: primary,
 		width: width / 2 + SPACING * 3,
 		justifyContent: 'center',
 		alignItems: 'center',
 		borderRadius: SPACING * 2,
 	},
 	buy: {
-		color: COLORS.white,
+		color: white,
 		fontSize: SPACING * 2,
 		fontWeight: '700',
 	},

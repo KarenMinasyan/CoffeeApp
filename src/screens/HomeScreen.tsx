@@ -6,6 +6,8 @@ import Header from 'src/components/Header';
 import SearchField from 'src/components/SearchField';
 import { COLORS, SPACING } from 'src/helpers/constants';
 
+const { white } = COLORS;
+
 const HomeScreen = () => (
 	<SafeAreaView>
 		<ScrollView style={styles.home}>
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
 		marginVertical: SPACING * 3,
 	},
 	title: {
-		color: COLORS.white,
+		color: white,
 		fontSize: SPACING * 3.5,
 		fontWeight: '600',
 	},

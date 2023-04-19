@@ -3,6 +3,7 @@ import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { COLORS, SPACING } from 'src/helpers/constants';
 import { CoffeeProductType } from 'src/store/coffees/initialState';
 
+const { primary, white, dark } = COLORS;
 const { width } = Dimensions.get('window');
 const sizes = ['S', 'M', 'L'];
 
@@ -23,7 +24,7 @@ const Info = ({ coffee }: { coffee: CoffeeProductType }) => {
 							onPress={() => setActiveSize(size)}
 							style={[styles.size, activeSize === size && styles.activeSize]}
 						>
-							<Text style={[styles.sizeName, activeSize === size && { color: COLORS.primary }]}>
+							<Text style={[styles.sizeName, activeSize === size && { color: primary }]}>
 								{size}
 							</Text>
 						</TouchableOpacity>
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
 		marginBottom: SPACING,
 	},
 	text: {
-		color: COLORS.white,
+		color: white,
 	},
 	sizes: {
 		marginVertical: SPACING * 2,
@@ -64,8 +65,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	activeSize: {
-		borderColor: COLORS.primary,
-		backgroundColor: COLORS.dark,
+		borderColor: primary,
+		backgroundColor: dark,
 	},
 	sizeName: {
 		color: COLORS['white-smoke'],
