@@ -7,7 +7,12 @@ export const coffeesSelector = ({ coffees }: RootState) => coffees;
 export const filterCoffeesByIdSelector = createSelector(
 	({ coffees }: RootState) => coffees.products,
 	({ category }: RootState) => category.categoryId,
-	(items, id) => items.filter(({ categoryId }) => id === null || categoryId === id)
+	({ coffees }: RootState) => coffees.search,
+	(items, id, value) =>
+		items.filter(
+			({ categoryId, name }) =>
+				(id === null || categoryId === id) && name.toLowerCase().includes(value.toLowerCase())
+		)
 );
 
 export const findCoffeeByIdSelector = createSelector(

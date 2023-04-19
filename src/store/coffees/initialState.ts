@@ -14,6 +14,7 @@ export type CoffeeProductType = {
 type CoffeesInitialType = {
 	products: CoffeeProductType[];
 	coffeeId: number | null;
+	search: string;
 };
 
 export const initialState: CoffeesInitialType = {
@@ -108,4 +109,5 @@ export const initialState: CoffeesInitialType = {
 		},
 	],
 	coffeeId: null,
+	search: '',
 };

@@ -12,8 +12,11 @@ const coffeesSlice = createSlice({
 		clear: (state) => {
 			state.coffeeId = null;
 		},
+		filterValue: (state, { payload }) => {
+			state.search = payload;
+		},
 	},
 });
 
-export const { chosenCoffee, clear } = coffeesSlice.actions;
+export const { chosenCoffee, clear, filterValue } = coffeesSlice.actions;
 export default coffeesSlice.reducer;
